@@ -1,8 +1,9 @@
 """
 new_case.py — Inicializador de casos Blue Team
 ===============================================
-Crea la estructura de carpetas del caso, copia la plantilla
-correcta con el metadata pre-rellenado, y abre el directorio.
+Este script crea la estructura de carpetas del caso, copia la plantilla
+correcta con el metadata pre-rellenado, y abre el directorio. Uso principal
+en la documentación de casos de Letsdefend, HackTheBox, etc.
 
 Uso:
     python new_case.py
@@ -139,7 +140,7 @@ def main():
         f.write(f"| Campo | Valor |\n|---|---|\n")
         f.write(f"| **Tipo** | {case_type} |\n")
         f.write(f"| **Fecha** | {date_str} |\n")
-        f.write(f"| **Estado** | 🔄 En progreso |\n\n")
+        f.write(f"| **Estado** | En progreso |\n\n")
         f.write(f"## Estructura\n\n")
         f.write(f"```\n{folder_name}/\n")
         f.write(f"├── writeup/      ← Documentación Markdown\n")

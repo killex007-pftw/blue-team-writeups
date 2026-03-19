@@ -411,7 +411,7 @@ def main():
         priority_tag = f"[{plugin['priority']}]" if plugin["priority"] == "HIGH" else "      "
         print(f"  [{i:02d}/{len(selected):02d}] {priority_tag} {plugin['name']:<22} — {plugin['desc']}")
         success, n_lines, out_file = run_plugin(vol_cmd, dump_path, plugin, output_dir)
-        status = f" {n_lines} líneas" if success else "❌ error"
+        status = f" {n_lines} líneas" if success else "error"
         print(f"           └─ {status}")
         results.append((plugin["name"], success, n_lines, out_file))
 

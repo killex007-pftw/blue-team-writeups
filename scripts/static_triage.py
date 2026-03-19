@@ -1,6 +1,7 @@
 """
 static_triage.py — Triage estático automatizado para análisis de malware
 =========================================================================
+Este script ejecuta un triage estático de nuestras para el análisis de malware.
 Dado un archivo (sample), ejecuta automáticamente:
   - Hashes (MD5, SHA1, SHA256)
   - Tipo de archivo y magic bytes
