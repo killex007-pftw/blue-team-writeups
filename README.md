@@ -2,7 +2,7 @@
 
 > Repositorio que contiene documentación de casos tomados de SOC, Incident Response, Threat Hunting y Malware Analysis — resueltos en LetsDefend y Hack The Box.
 
-**Autor:** Kilmer Bustos | [GitHub](https://github.com/killex007-pftw) · [Medium](https://medium.com/@killex007)
+**Autor:** Kilmer Bustos 
 
 ---
 
