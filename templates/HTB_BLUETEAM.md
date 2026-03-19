@@ -2,7 +2,7 @@
 
 <!-- Archivo: HTB-YYYYMMDD-nombre-del-reto.md -->
 <!--
-⚠️  POLÍTICA DE DIVULGACIÓN HTB
+  POLÍTICA DE DIVULGACIÓN HTB
 Este writeup solo debe publicarse una vez que el reto esté marcado como RETIRED en HTB
 o con autorización explícita de la plataforma. No publicar flags en texto plano.
 -->
@@ -20,7 +20,7 @@ o con autorización explícita de la plataforma. No publicar flags en texto plan
 | **Categoría HTB** | DFIR / Malware Analysis / Threat Intelligence / SOC / Otro |
 | **Puntos** | |
 | **Fecha de resolución** | YYYY-MM-DD |
-| **Estado del reto** | ✅ Retired / 🔒 Active (no publicar) |
+| **Estado del reto** | Retired / Active (no publicar) |
 | **Tiempo de resolución** | ~X horas |
 
 ### Herramientas utilizadas

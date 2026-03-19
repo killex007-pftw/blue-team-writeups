@@ -15,7 +15,7 @@
 | **Fecha del análisis** | YYYY-MM-DD |
 | **Severidad** | CRITICAL / HIGH / MEDIUM / LOW |
 | **Tipo de incidente** | Ransomware / Data Breach / Lateral Movement / Insider Threat / Otro |
-| **Estado** | ✅ Contenido / 🔄 En progreso |
+| **Estado** | Contenido / En progreso |
 | **Tiempo invertido** | ~X horas |
 
 ### Activos afectados

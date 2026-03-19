@@ -11,7 +11,7 @@
 | **Plataforma** | LetsDefend |
 | **Categoría** | Threat Hunting |
 | **Fecha** | YYYY-MM-DD |
-| **Resultado** | 🔴 Amenaza confirmada / 🟡 Actividad sospechosa / 🟢 Entorno limpio |
+| **Resultado** | Amenaza confirmada / Actividad sospechosa / Entorno limpio |
 | **Tiempo invertido** | ~X horas |
 
 ### Fuentes de datos consultadas
@@ -127,7 +127,7 @@ Nivel de madurez de la hunt:
 
 **Análisis:**
 
-**Veredicto:** 🔴 Malicioso / 🟡 Sospechoso / 🟢 Benigno
+**Veredicto:** Malicioso / Sospechoso / Benigno
 
 ---
 
@@ -137,22 +137,22 @@ Nivel de madurez de la hunt:
 
 | # | Descripción | Veredicto | Sistemas afectados |
 |---|---|---|---|
-| 1 | | 🔴/🟡/🟢 | |
+| 1 | | Malicioso/Sospechoso/Benigno | |
 | 2 | | | |
 
 ### Resultado general
 
-**🔴 Amenaza confirmada** — Se encontró evidencia de actividad maliciosa activa.
+**Amenaza confirmada** — Se encontró evidencia de actividad maliciosa activa.
 **→ Acción:** Escalar a Incident Response.
 
 _o_
 
-**🟡 Actividad sospechosa** — Se identificaron anomalías que requieren monitoreo adicional.
+**Actividad sospechosa** — Se identificaron anomalías que requieren monitoreo adicional.
 **→ Acción:** Crear regla de detección y monitorear.
 
 _o_
 
-**🟢 Entorno limpio** — No se encontró evidencia de la amenaza hipotética.
+**Entorno limpio** — No se encontró evidencia de la amenaza hipotética.
 **→ Acción:** Documentar consultas como base para detección futura.
 
 ---

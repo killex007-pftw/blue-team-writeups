@@ -15,7 +15,7 @@
 | **Fecha de la alerta** | YYYY-MM-DD HH:MM UTC |
 | **Fecha del análisis** | YYYY-MM-DD |
 | **Severidad** | CRITICAL / HIGH / MEDIUM / LOW |
-| **Veredicto final** | ✅ True Positive / ❌ False Positive |
+| **Veredicto final** | True Positive / False Positive |
 | **Escalado** | Sí / No |
 | **Tiempo invertido** | ~X min |
 
@@ -102,7 +102,7 @@
 
 ### ¿True Positive o False Positive?
 
-**Veredicto:** ✅ True Positive / ❌ False Positive
+**Veredicto:** True Positive / False Positive
 
 **Justificación:**
 > Explicar con evidencia concreta por qué se llegó a este veredicto.
