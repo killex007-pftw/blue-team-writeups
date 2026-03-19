@@ -124,10 +124,10 @@ Observación  : Intento de bypass de autenticación con comentario SQL (-- -)
 
 ### Capturas de pantalla
 
-![Detalles del evento en Monitoring](./screenshots-SOC165/01-event-details.png)
-![Logs de IP origen en Log Management](./screenshots-SOC165/02-logs-source-ip.png)
-![Raw del log que disparó la alerta](./screenshots-SOC165/03-trigger-log-raw.png)
-![Playbook completado — Score 100%](./screenshots-SCO165/04-playbook-score.png)
+![Detalles del evento en Monitoring](./screenshots-SOC165/01-event-details.PNG)
+![Logs de IP origen en Log Management](./screenshots-SOC165/02-logs-source-ip.PNG)
+![Raw del log que disparó la alerta](./screenshots-SOC165/03-trigger-log-raw.PNG)
+![Playbook completado — Score 100%](./screenshots-SCO165/04-playbook-score.PNG)
 
 ---
 
