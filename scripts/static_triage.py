@@ -33,15 +33,15 @@ from datetime import datetime
 
 # ─── CONFIGURACIÓN — RUTAS DE HERRAMIENTAS EN FLARE VM ───────────────────────
 # Flare VM instala las herramientas en C:\Tools\ por defecto.
-# Si alguna herramienta está en otra ruta, ajustar aquí.
+# Si alguna herramienta está en otra ruta, tratar de ajustar AQUÍ.
 
 TOOL_PATHS = {
     "die": [
-        r"C:\Tools\die\die.exe",                    # ✅ Confirmado en Flare VM
+        r"C:\Tools\die\die.exe",                    # Confirmado en mi entorno Flare VM
         r"C:\Tools\die_win64_portable\die.exe",     # Fallback alternativo
     ],
     "capa": [
-        r"C:\Tools\capa\capa.exe",                  # ✅ Confirmado en Flare VM
+        r"C:\Tools\capa\capa.exe",                  # Confirmado en mi entorno Flare VM
         r"C:\Tools\capa-v7.0.0-windows\capa.exe",  # Fallback alternativo
     ],
 }
@@ -50,7 +50,7 @@ MIN_STRING_LENGTH = 6       # Longitud mínima para filtrar strings
 MAX_STRINGS_OUTPUT = 80     # Máximo de strings a incluir en el reporte
 # ──────────────────────────────────────────────────────────────────────────────
 
-
+# El banner es personalizable acorde a tu entorno y a tu actividad a realizar, en este caso el triage estático durante el Análisis de Malware.
 def banner():
     print("""
 ╔══════════════════════════════════════════════╗
@@ -214,7 +214,7 @@ def run_capa(filepath, exports_dir):
     if not capa_path:
         return None, "CAPA no encontrado en rutas configuradas"
     try:
-        print("  ⏳ Ejecutando CAPA (puede tomar 1-3 minutos)...")
+        print("  Ejecutando CAPA (puede tomar 1-3 minutos)...")
         result = subprocess.run(
             [capa_path, filepath],
             capture_output=True, text=True, timeout=180
@@ -282,7 +282,7 @@ def generate_report(filepath, exports_dir):
     if die_output:
         lines.append(f"  {die_output}")
     else:
-        lines.append(f"  ⚠️  {die_error}")
+        lines.append(f"  Error de die  {die_error}")
 
     # ── Strings ──
     print("  [4/6] Extrayendo strings...")
@@ -319,7 +319,7 @@ def generate_report(filepath, exports_dir):
         preview = "\n".join(capa_output.split("\n")[:50])
         lines.append(preview)
     else:
-        lines.append(f"  ⚠️  {capa_error}")
+        lines.append(f"  Error de capa  {capa_error}")
 
     # ── IOC Template ──
     lines.append(f"\n[IOCs INICIALES — completar manualmente]")
@@ -368,7 +368,7 @@ def main():
     # Validar que el sample existe
     sample_path = os.path.abspath(args.sample)
     if not os.path.isfile(sample_path):
-        print(f"  ❌ Archivo no encontrado: {sample_path}")
+        print(f" Archivo no encontrado: {sample_path}")
         sys.exit(1)
 
     # Determinar exports_dir
@@ -389,8 +389,8 @@ def main():
     # Mostrar en consola
     print()
     print(report_content)
-    print(f"  💾 Reporte guardado en: {report_path}")
-    print(f"  📋 Copiar los hashes al template de Malware Analysis.\n")
+    print(f"  Reporte guardado en: {report_path}")
+    print(f"  Copiar los hashes al template de Malware Analysis.\n")
 
 
 if __name__ == "__main__":

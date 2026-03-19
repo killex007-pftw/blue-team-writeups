@@ -1,7 +1,7 @@
 """
 vol_quick.py — Volatility 3 Quick Analysis Wrapper
 ====================================================
-Ejecuta automáticamente los plugins más importantes de Volatility 3
+Este script ejecuta automáticamente los plugins más importantes de Volatility 3
 sobre un memory dump y guarda cada output en la carpeta exports/ del caso.
 
 También genera un resumen consolidado con los hallazgos más relevantes.
@@ -33,7 +33,7 @@ VOLATILITY_PATHS = [
     r"C:\Tools\volatility3\volatility3\vol.py", # Fallback alternativo
 ]
 
-# ✅ Volatility 3 v2.27.0 instalado como paquete Python (sin vol.exe)
+# Volatility 3 v2.27.0 instalado como paquete Python (sin vol.exe) - Verificado en mi entorno local.
 # Se invoca como: C:\python310\python.exe -m volatility3
 # find_volatility() prueba esto primero antes de VOLATILITY_PATHS
 PYTHON_CMD = r"C:\python310\python.exe"
@@ -124,7 +124,7 @@ PLUGINS = [
 HIGH_PRIORITY_PLUGINS = [p["name"] for p in PLUGINS if p["priority"] == "HIGH"]
 # ──────────────────────────────────────────────────────────────────────────────
 
-
+# Banner personalizable, lo puedes modificar segun tus gustos
 def banner():
     print("""
 ╔══════════════════════════════════════════════╗
@@ -138,11 +138,11 @@ def find_volatility():
     """
     Detecta la instalacion de Volatility 3 disponible.
 
-    En este Flare VM, Volatility esta instalado como paquete Python sin vol.exe.
+    En mi instancia Flare VM, Volatility esta instalado como paquete Python sin vol.exe.
     El entry point correcto es: from volatility3.cli import main
     Se crea un wrapper vol_runner.py en el mismo directorio del script.
     """
-    # Primera opcion: paquete pip (volatility3.cli) — caso de este Flare VM
+    # Primera opcion: paquete pip (volatility3.cli) — caso aplicado para mi entorno Flare VM, se recomienda evaluar en caso no cumpla para tu entorno.
     try:
         check = subprocess.run(
             [PYTHON_CMD, "-c", "from volatility3.cli import main; print('OK')"],
@@ -238,7 +238,7 @@ def extract_key_findings(output_dir):
                         suspicious_procs.append(line.strip())
                         break
         if suspicious_procs:
-            findings.append(("⚠️  PROCESOS SOSPECHOSOS", suspicious_procs[:15]))
+            findings.append(("PROCESOS SOSPECHOSOS", suspicious_procs[:15]))
 
     # ── Conexiones de red (netscan) ──
     netscan_path = os.path.join(output_dir, "netscan.txt")
@@ -251,7 +251,7 @@ def extract_key_findings(output_dir):
                     if "127.0.0.1" not in line and "::1" not in line:
                         connections.append(line.strip())
         if connections:
-            findings.append(("🌐 CONEXIONES DE RED ACTIVAS", connections[:20]))
+            findings.append(("CONEXIONES DE RED ACTIVAS", connections[:20]))
 
     # ── Malfind ──
     malfind_path = os.path.join(output_dir, "malfind.txt")
@@ -262,7 +262,7 @@ def extract_key_findings(output_dir):
         # Contar entradas (cada proceso en malfind empieza con su nombre)
         hits = [l for l in content.splitlines() if l.startswith("Process:") or "MZ" in l]
         if hits:
-            findings.append(("🔴 MALFIND — Posible Code Injection", hits[:10]))
+            findings.append(("MALFIND — Posible Code Injection", hits[:10]))
 
     # ── Cmdline sospechosos ──
     cmdline_path = os.path.join(output_dir, "cmdline.txt")
@@ -279,7 +279,7 @@ def extract_key_findings(output_dir):
                 if any(p in lower for p in sus_patterns):
                     suspicious_cmds.append(line.strip())
         if suspicious_cmds:
-            findings.append(("⚠️  CMDLINE SOSPECHOSOS", suspicious_cmds[:10]))
+            findings.append(("CMDLINE SOSPECHOSOS", suspicious_cmds[:10]))
 
     return findings
 
@@ -301,7 +301,7 @@ def generate_summary(dump_path, output_dir, results, vol_cmd):
     lines.append(f"  {'Plugin':<22} {'Estado':<10} {'Líneas':>8}  Archivo")
     lines.append(f"  {'-'*22} {'-'*10} {'-'*8}  {'-'*30}")
     for name, success, n_lines, out_file in results:
-        status = "✅ OK" if success else "❌ ERROR"
+        status = "OK" if success else "ERROR"
         fname = os.path.basename(out_file)
         lines.append(f"  {name:<22} {status:<10} {n_lines:>8}  {fname}")
 
@@ -368,20 +368,20 @@ def main():
     # Validar dump
     dump_path = os.path.abspath(args.dump)
     if not os.path.isfile(dump_path):
-        print(f"  ❌ Dump no encontrado: {dump_path}")
+        print(f" Dump no encontrado: {dump_path}")
         sys.exit(1)
 
-    # Detectar Volatility
+    # Detectar Volatility en tu entorno
     vol_cmd = find_volatility()
     if not vol_cmd:
-        print("  ❌ Volatility 3 no encontrado.")
+        print("  Volatility 3 no encontrado.")
         print("     Opciones:")
         print("     1. Instalar con: pip install volatility3")
         print("     2. Descargar desde: https://github.com/volatilityfoundation/volatility3")
         print("     3. Ajustar VOLATILITY_PATHS en este script")
         sys.exit(1)
 
-    print(f"  ✅ Volatility encontrado: {' '.join(vol_cmd)}")
+    print(f"  Volatility encontrado: {' '.join(vol_cmd)}")
 
     # Directorio de exports
     if args.case:
@@ -395,7 +395,7 @@ def main():
         selected = [p for p in PLUGINS if p["name"] in args.plugins]
         not_found = [n for n in args.plugins if n not in [p["name"] for p in PLUGINS]]
         if not_found:
-            print(f"  ⚠️  Plugins no reconocidos: {', '.join(not_found)}")
+            print(f"Plugins no reconocidos: {', '.join(not_found)}")
     elif args.priority == "high":
         selected = [p for p in PLUGINS if p["priority"] == "HIGH"]
     else:
@@ -411,18 +411,18 @@ def main():
         priority_tag = f"[{plugin['priority']}]" if plugin["priority"] == "HIGH" else "      "
         print(f"  [{i:02d}/{len(selected):02d}] {priority_tag} {plugin['name']:<22} — {plugin['desc']}")
         success, n_lines, out_file = run_plugin(vol_cmd, dump_path, plugin, output_dir)
-        status = f"✅ {n_lines} líneas" if success else "❌ error"
+        status = f" {n_lines} líneas" if success else "❌ error"
         print(f"           └─ {status}")
         results.append((plugin["name"], success, n_lines, out_file))
 
     # Generar resumen
-    print(f"\n  📊 Generando resumen consolidado...")
+    print(f"\n  Generando resumen consolidado...")
     summary_path, summary_content = generate_summary(dump_path, output_dir, results, vol_cmd)
 
     print()
     print(summary_content)
-    print(f"  💾 Resumen guardado en: {summary_path}")
-    print(f"  📋 Revisar vol_summary.txt y copiar hallazgos al template de análisis.\n")
+    print(f"   Resumen guardado en: {summary_path}")
+    print(f"   Revisar vol_summary.txt y copiar hallazgos al template de análisis.\n")
 
 
 if __name__ == "__main__":
