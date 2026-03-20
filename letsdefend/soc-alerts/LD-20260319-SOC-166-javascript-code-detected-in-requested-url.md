@@ -60,7 +60,7 @@ El evento se clasifica como intento de ataque malicioso (**True Positive**) sin 
 
 **Event Details:**
 
-![SOC Alert](./screenshots-SOC116/01-event-details.PNG)
+![SOC Alert](./screenshots-SOC166/01-event-details.PNG)
 
 
 ### Primera hipótesis
@@ -76,12 +76,12 @@ La ip `112.85.42[.]13` corresponde a una dirección pública de China según los
 
 **WHOIS lookup:**
 
-![WHOIS IP](./screenshots-SOC116/02-whois-check-ip.PNG)
+![WHOIS IP](./screenshots-SOC166/02-whois-check-ip.PNG)
 
 
 **VirusTotal analysis:**
 
-![VirusTotal IP](./screenshots-SOC116/03-VirusTotal-check-ip.PNG)
+![VirusTotal IP](./screenshots-SOC166/03-VirusTotal-check-ip.PNG)
 
 ### Logs relevantes 
 
@@ -131,7 +131,7 @@ Observación  : Intento directo de ejecución de código JavaScript, tratando de
 
 **Web logs:**
 
-![Logs Source IP](./screenshots-SOC116/04-logs-sourceip.PNG)
+![Logs Source IP](./screenshots-SOC166/04-logs-sourceip.PNG)
 
 
 ---

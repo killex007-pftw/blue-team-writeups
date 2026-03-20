@@ -57,6 +57,11 @@ Un atacante externo desde la IP `167.99.169[.]17` realizó un ataque de SQL Inje
 | Device Action | Allowed |
 | Timestamp | 2022-02-25 11:34 AM |
 
+
+Detalles del evento en Monitoring
+
+![Detalles del evento en Monitoring](./screenshots-SOC165/01-event-details.PNG)
+
 ### Primera hipótesis
 
 La regla fue disparada por la presencia del patrón `OR 1 = 1` en el parámetro `q` de la URL, codificado en URL encoding. La decodificación del payload confirma un intento clásico de SQL Injection boolean-based contra el endpoint `/search/` de `WebServer1001`. El tráfico proviene de una IP externa (Internet → Company Network), lo que descarta actividad interna.
@@ -122,20 +127,17 @@ Device Action: Permitted
 Observación  : Intento de bypass de autenticación con comentario SQL (-- -)
 ```
 
-### Capturas de pantalla
-Detalles del evento en Monitoring
-![Detalles del evento en Monitoring](./screenshots-SOC165/01-event-details.PNG)
-
 Logs de IP origen en Log Management
+
 ![Logs de IP origen en Log Management](./screenshots-SOC165/02-logs-source-ip.PNG)
+
 
 Raw del log que disparó la alerta
 ![Raw del log que disparó la alerta](./screenshots-SOC165/03-trigger-log-raw.PNG)
 
-Playbook completado — Score 100%
-![Playbook completado — Score 100%](./screenshots-SOC165/04-playbook-score.PNG)
 
 ---
+
 
 ## 3. Análisis
 
