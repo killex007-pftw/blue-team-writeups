@@ -58,9 +58,10 @@ El evento se clasifica como intento de ataque malicioso (**True Positive**) sin 
 
 
 
-Event Details
+**Event Details:**
 
-![SOC Alert](./screenshots-SOC166/event-details.png)
+![SOC Alert](./screenshots-SOC116/01-event-details.png)
+
 
 ### Primera hipótesis
 
@@ -73,12 +74,14 @@ Event Details
 ### Verificación de la IP de origen
 La ip `112.85.42[.]13` corresponde a una dirección pública de China según los resultados obtenidos WHOIS. Según AbuseIPDB, la dirección IP analizada tiene una puntuación de 0%, lo que implica que carece de reportes negativos y tiene reputación positiva. Añadiendo a este análsisis, los resultados de VirusTotal muestra que la dirección IP `112.85.42[.]13`, tiene una puntuación de 0/94, indicando que no existen detecciones conocidas por el momento. Por otro lado, se verificó que no pertenece a ningún activo interno de la empresa ni herramientas de simulación de ataque (Verodin, AttackIQ, Picus). No se encontró ningun correo electrónico o algun registro de trabajo planificado asociado a esta IP.
 
-WHOIS lookup:
-![WHOIS IP](./screenshots-SOC166/02-whois-check-ip.PNG)
+**WHOIS lookup:**
+
+![WHOIS IP](./screenshots-SOC116/02-whois-check-ip.PNG)
 
 
-VirusTotal analysis:
-![VirusTotal IP](./screenshots-SOC166/03-VirusTotal-check-ip.PNG)
+**VirusTotal analysis:**
+
+![VirusTotal IP](./screenshots-SOC116/03-VirusTotal-check-ip.PNG)
 
 ### Logs relevantes 
 
@@ -126,8 +129,9 @@ Observación  : Intento directo de ejecución de código JavaScript, tratando de
 
 > **OBSERVACIÓN**: Los payloads analizados en los registros tienen una particularidad, que todos tienen el caracter especial de dolar `$` entre sus sintaxis. Entonces la estructura de cada payload que lleva el signo "$" tiene una estructura no estándar para etiquetas HTML o JavaScript, por lo que tiene una menor probabilidad de ser efectivo en la práctica. Cabe la posibilidad que LetsDefend haya modificado los paylods con fines educativos.  
 
-Web logs:
-![Logs Source IP](./screenshots-SOC166/04-logs-sourceip.PNG)
+**Web logs:**
+
+![Logs Source IP](./screenshots-SOC116/04-logs-sourceip.PNG)
 
 
 ---
