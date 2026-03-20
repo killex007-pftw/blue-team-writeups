@@ -60,7 +60,7 @@ El evento se clasifica como intento de ataque malicioso (**True Positive**) sin 
 
 **Event Details:**
 
-![SOC Alert](./screenshots-SOC116/01-event-details.png)
+![SOC Alert](./screenshots-SOC116/01-event-details.PNG)
 
 
 ### Primera hipótesis
