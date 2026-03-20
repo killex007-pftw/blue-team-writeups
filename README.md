@@ -48,7 +48,8 @@ blue-team-writeups/
 
 | ID | Caso | Severidad | Veredicto | Fecha |
 |---|---|---|---|---|
-| 115 | [Possible SQL Injection Payload Detected](letsdefend/soc-alerts/LD-20260318-SOC-soc165-possible-sql-injection-payload-detected.md) | High | True Positive | 18/03/2026 |
+| 115 | [Possible SQL Injection Payload Detected](letsdefend/soc-alerts/LD-20260318-SOC-165-possible-sql-injection-payload-detected.md) | High | True Positive | 18/03/2026 |
+| 116 | [Javascript Code Detected in Requested URL](letsdefend/soc-alerts/LD-20260319-SOC-166-javascript-code-detected-in-requested-url.md) | Medium | True Positive | 19/03/2026 |
 
 
 ---
