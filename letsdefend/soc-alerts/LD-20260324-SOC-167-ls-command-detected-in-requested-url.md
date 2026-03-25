@@ -1,4 +1,4 @@
-# 167-LS Command Detected in Requested URL — de la Alerta] — SOC Alert Writeup
+# 167-LS Command Detected in Requested URL — SOC Alert Writeup
 
 <!-- Archivo: LD-YYYYMMDD-SOC-nombre-del-caso.md -->
 
