@@ -16,12 +16,12 @@
 | **Fecha del análisis** | 2026-03-24 |
 | **Severidad** | HIGH |
 | **Veredicto final** | False Positive |
-| **Escalado** | Sí / No |
-| **Tiempo invertido** | ~X min |
+| **Escalado** | No |
+| **Tiempo invertido** | ~30 min |
 
 ### Herramientas utilizadas
 
-`LetsDefend Log Managment` · `LetsDefend Endpoint Security` · `LetsDefend  Email Security`· `CyberChef` · `WHOIS`
+`LetsDefend Log Managment` · `LetsDefend Endpoint Security` · `WHOIS`
 
 ### MITRE ATT&CK
 
@@ -35,7 +35,15 @@
 
 ## Resumen Ejecutivo
 
-> Descripción concisa: qué alerta se disparó, sobre qué activo, qué se encontró durante el análisis y cuál fue el veredicto final.
+El 27 de febrero de 2022, el sistema de supervisión de seguridad activó una alerta (ID de evento 117) debido a la detección de la cadena `ls` en una URL a la que se accedió desde el host interno `EliotPRD` (IP `172.16.17[.]46`).
+
+Se llevó a cabo una revisión exhaustiva que incluyó:
+
+- Los registros de red de la IP de origen
+- La actividad de los terminales en EliotPRD
+- El historial del navegador del usuario Eliot
+
+El análisis confirmó que todo el tráfico corresponde a una navegación web legítima al dominio letsdefend.io, sin indicios de procesos maliciosos, comandos o conexiones anómalas.
 
 ---
 
