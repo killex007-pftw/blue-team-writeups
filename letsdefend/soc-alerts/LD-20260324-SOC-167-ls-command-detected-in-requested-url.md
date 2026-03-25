@@ -75,7 +75,7 @@ El análisis confirmó que todo el tráfico corresponde a una navegación web le
 
 ### Primera hipótesis
 
-> El evento sugiere un posible intento de reconocimiento o enumeración web, donde la regla detecta la cadena `ls` en la URL. Dado que el parámetro observado `?s=skills` es consistente con búsquedas legitimas en sitios web (por ejemplo, Wordpress), es probable que se trate de un falso positivo o tráfico benigno mal categorizado, más que una explotación activa.
+El evento sugiere un posible intento de reconocimiento o enumeración web, donde la regla detecta la cadena `ls` en la URL. Dado que el parámetro observado `?s=skills` es consistente con búsquedas legitimas en sitios web, es probable que se trate de un falso positivo o tráfico benigno mal categorizado, más que una explotación activa.
 
 ---
 
@@ -198,7 +198,8 @@ Adicionalmente, la actividad fue validada mediante el historial del navegador de
 **Veredicto:** False Positive
 
 **Justificación:**
-> La alerta fue generada por la detección de la cadena “ls” en la URL (?s=skills), lo que activó una regla basada en firmas asociada a posibles comandos del sistema. Sin embargo, el análisis de tráfico web evidenció una secuencia coherente de navegación hacia el dominio `letsdefend.io`, con respuestas HTTP 200 y un User-Agent consistente con un navegador legítimo. Adicionalmente, la revisión del endpoint EliotPRD no mostró evidencia de ejecución de comandos, actividad sospechosa en procesos, ni uso de terminal relacionado con la alerta. El historial del navegador confirmó que las solicitudes fueron generadas por interacción legítima del usuario. Por lo tanto, se concluye que la alerta corresponde a un falso positivo derivado de una coincidencia de patrón en la URL.
+
+ La alerta fue generada por la detección de la cadena “ls” en la URL (?s=skills), lo que activó una regla basada en firmas asociada a posibles comandos del sistema. Sin embargo, el análisis de tráfico web evidenció una secuencia coherente de navegación hacia el dominio `letsdefend.io`, con respuestas HTTP 200 y un User-Agent consistente con un navegador legítimo. Adicionalmente, la revisión del endpoint EliotPRD no mostró evidencia de ejecución de comandos, actividad sospechosa en procesos, ni uso de terminal relacionado con la alerta. El historial del navegador confirmó que las solicitudes fueron generadas por interacción legítima del usuario. Por lo tanto, se concluye que la alerta corresponde a un falso positivo derivado de una coincidencia de patrón en la URL.
 
 ### Decisión de escalado
 

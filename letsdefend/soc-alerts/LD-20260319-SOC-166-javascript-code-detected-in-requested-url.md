@@ -33,7 +33,7 @@
 
 ## Resumen Ejecutivo
 
-> Un actor externo desde la IP 112.85.42[.]13 realizo múltiples solicitudes HTTP dirigidas al endpoint `/search/` las cuáles contenían patrones típicos de **Cross-Site Scripting (XSS)** en el parámetro `q`. El tráfico corresponde a intentos de inyección de código JavaScript. No se encontró evidencia ejecución ni de explotación exitosa, ya que todas las respuestas del servidor fueron redireccionadas (HTTP 302) sin contenido procesado.
+Un actor externo desde la IP 112.85.42[.]13 realizo múltiples solicitudes HTTP dirigidas al endpoint `/search/` las cuáles contenían patrones típicos de **Cross-Site Scripting (XSS)** en el parámetro `q`. El tráfico corresponde a intentos de inyección de código JavaScript. No se encontró evidencia ejecución ni de explotación exitosa, ya que todas las respuestas del servidor fueron redireccionadas (HTTP 302) sin contenido procesado.
 El evento se clasifica como intento de ataque malicioso (**True Positive**) sin impacto confirmado en el sistema.
 
 ---
@@ -65,7 +65,7 @@ El evento se clasifica como intento de ataque malicioso (**True Positive**) sin 
 
 ### Primera hipótesis
 
-> La alerta fue disparada por la presencia del patron `<script>` en el parámetro `q` de la URL. El payload indica un intento de Cross-Site Scripting (XSS) contra el endpoint `/search/` de `WebServer1002`. El tráfico proviene de una IP externa (fuente conectada a internet), lo que sugiere que no tiene ningún origen interno. Todas las solicitudes HTTP observadas retornaron respuestas 302 sin evidencia de ejecución de payload y reflexión. 
+La alerta fue disparada por la presencia del patron `<script>` en el parámetro `q` de la URL. El payload indica un intento de Cross-Site Scripting (XSS) contra el endpoint `/search/` de `WebServer1002`. El tráfico proviene de una IP externa (fuente conectada a internet), lo que sugiere que no tiene ningún origen interno. Todas las solicitudes HTTP observadas retornaron respuestas 302 sin evidencia de ejecución de payload y reflexión. 
 
 ---
 
@@ -175,7 +175,7 @@ De acuerdos a los registros, se verificó que la dirección IP 112.85.42[.]13 no
 **Veredicto:** True Positive
 
 **Justificación:**
-> El tráfico detectado contiene indicadores de un intento malicioso de Cross-Site Scripting (XSS). La solicitud HTTP incluye patrones relacionados a JavaScript tales como `<script>` y `alert(1)` dentro del parámetro `q`, lo cuál es comunmente usado en intentos XSS. El ataque no fue exitoso, todos los payloads retornaron HTTP 302 con response size de 0 bytes, sin evidencia clara de la respuesta a la ejecución de los scripts en la aplicación web.
+El tráfico detectado contiene indicadores de un intento malicioso de Cross-Site Scripting (XSS). La solicitud HTTP incluye patrones relacionados a JavaScript tales como `<script>` y `alert(1)` dentro del parámetro `q`, lo cuál es comunmente usado en intentos XSS. El ataque no fue exitoso, todos los payloads retornaron HTTP 302 con response size de 0 bytes, sin evidencia clara de la respuesta a la ejecución de los scripts en la aplicación web.
 
 ### Decisión de escalado
 
