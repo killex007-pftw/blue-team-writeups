@@ -1,6 +1,6 @@
 # BLUE TEAM WRITEUPS
 
-> Repositorio que contiene documentación de casos tomados de SOC, Incident Response, Threat Hunting y Malware Analysis — resueltos en LetsDefend y Hack The Box.
+Repositorio que contiene documentación de casos tomados de SOC, Incident Response, Threat Hunting y Malware Analysis — resueltos en LetsDefend y Hack The Box.
 
 **Autor:** Kilmer Bustos 
 
@@ -15,7 +15,8 @@
 
 ---
 
-## Estructura del repositorio (Aún en desarrollo)
+## Estructura del repositorio 
+> Aún en desarrollo.
 
 ```
 blue-team-writeups/
@@ -42,7 +43,8 @@ blue-team-writeups/
 
 ---
 
-## Índice de writeups (Aún en progreso, según vaya subiendo mas documentación de casos se irán indexando para ambas plataformas)
+## Índice de writeups 
+> NOTA: Aún en progreso, según vaya subiendo mas documentación de casos se irán indexando para ambas plataformas.
 
 ### LetsDefend — SOC Alerts
 
@@ -51,7 +53,7 @@ blue-team-writeups/
 | 115 | [Possible SQL Injection Payload Detected](letsdefend/soc-alerts/LD-20260318-SOC-165-possible-sql-injection-payload-detected.md) | High | True Positive | 18/03/2026 |
 | 116 | [Javascript Code Detected in Requested URL](letsdefend/soc-alerts/LD-20260319-SOC-166-javascript-code-detected-in-requested-url.md) | Medium | True Positive | 19/03/2026 |
 | 117 | [LS Command Detected in Requested URL](letsdefend/soc-alerts/LD-20260324-SOC-167-ls-command-detected-in-requested-url.md) | High | False Positive | 24/03/2026 |
-
+| 118 | [Whoami Command Detected in Request Body](letsdefend/soc-alerts/LD-20260325-SOC-168-whoami-command-detected-in-request-body.md) | High | True Positive | 25/03/2026 | 
 ---
 
 ## Disclaimer
