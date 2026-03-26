@@ -123,7 +123,7 @@ POST Parameters: ?c=cat /etc/passwd
 - Se observa variación en los tamaños de respuesta, lo que sugiere que los comandos ejecutados podrían estar generando salidas distintas.
 - Los comandos utilizados (ls, whoami, uname, cat /etc/passwd) son consistentes con actividades de enumeración y reconocimiento en sistemas Linux.
 
-#### Evidencias: *Vista general de los registros en Log Monitoring*
+#### Evidencias: *Vista general de los registros en Log Management*
 ![Event-Logs](./screenshots-SOC168/04-logs-sourceip.PNG)
 
 ---
@@ -134,11 +134,11 @@ POST Parameters: ?c=cat /etc/passwd
 
 | Timestamp | URL solicitada | Parámetro POST     | Código de respuesta | Tamaño de respuesta |
 | --------- | -------------- | ------------------ | ------------------- | ---------------- |
-| 04:12 AM  | `https://172.16.17.16/video/`        | ?c=ls              | 200 OK              | 1021             |
-| 04:13 AM  | `https://172.16.17.16/video/`        | ?c=whoami          | 200 OK              | 912              |
-| 04:14 AM  | `https://172.16.17.16/video/`        | ?c=uname           | 200 OK              | 910              |
-| 04:15 AM  | `https://172.16.17.16/video/`        | ?c=cat /etc/passwd | 200 OK              | 1321             |
-| 04:16 AM  | `https://172.16.17.16/video/`        | ?c=cat /etc/shadow | 200 OK              | 1501             |
+| 04:11 AM  | `https://172.16.17.16/video/`        | ?c=ls              | 200 OK              | 1021             |
+| 04:12 AM  | `https://172.16.17.16/video/`        | ?c=whoami          | 200 OK              | 912              |
+| 04:13 AM  | `https://172.16.17.16/video/`        | ?c=uname           | 200 OK              | 910              |
+| 04:14 AM  | `https://172.16.17.16/video/`        | ?c=cat /etc/passwd | 200 OK              | 1321             |
+| 04:15 AM  | `https://172.16.17.16/video/`        | ?c=cat /etc/shadow | 200 OK              | 1501             |
 
 Todas las solicitudes POST desde la IP externa `61.177.172[.]87` se dirigieron al endpoint `/video/`. Los comandos enviados (`ls`, `whoami`, `uname`, `cat /etc/passwd`, `cat /etc/shadow`) fueron procesados exitosamente, como lo indica el código `200 OK` y la variación en el tamaño de respuesta. Este patrón muestra un intento de enumeración y extracción de información sensible, consistente con un ataque de ejecución remota de comandos automatizado.
 
@@ -149,7 +149,7 @@ Los comandos observados incluyen: ls, whoami, cat /etc/passwd, entro otros.
 
 **Evidencia**: *Comandos ejecutados en el servidor `WebServer1004`*
 
-![Command-history](./screenshots-SOC167/05-endpoint-terminal-history.PNG)
+![Command-history](./screenshots-SOC168/05-endpoint-terminal-history.PNG)
 
 Estos comandos fueron ejecutados exitosamente, corroborados mediante:
 - Respuestas HTTP `200 OK`
