@@ -237,7 +237,7 @@ No se identificaron procesos, comandos o conexiones sospechosas que indiquen com
 
 ## Referencias
 
-- [MITRE ATT&CK — Técnica](https://attack.mitre.org/techniques/TXXXX/)
+- [MITRE ATT&CK — Técnica](https://attack.mitre.org/techniques/T1059/)
 - [VirusTotal](https://www.virustotal.com)
 - [WHOIS](https://www.whois.com/whois/172.16.17.46)
 
