@@ -165,7 +165,7 @@ Las solicitudes POST enumerando `user_id` retornaron datos distintos para cada u
 Se realizó el aislamiento del endpoint comprometido `172.16.17.15 (WebServer1005)` mediante la funcionalidad de **containment** del EDR (Endpoint Security en LetsDefend), con el objetivo de prevenir el escalamiento y limitar el acceso del atacante al sistema.
 
 #### Evidencia: *Contención del endpoint comprometido 172.16.17.15(WebServer1005)*
-!(host-contained)(./screenshots-SOC169/05-host-contained.PNG)
+![host-contained](./screenshots-SOC169/05-host-contained.PNG)
 
 ---
 
