@@ -273,7 +273,7 @@ tshark -r meerkat.pcap `
 # → 57 líneas únicas en hex
 ```
 *Output de tshark mostrando las líneas hex de los intentos — extracto de las primeras 10*
-![Output de tshark mostrando las líneas hex de los intentos — extracto de las primeras 10](04-Output-tshark-10-primeras-líneas-hex-intentos.PNG)
+![Output de tshark mostrando las líneas hex de los intentos — extracto de las primeras 10](./screenshots-meerkat/04-Output-tshark-10-primeras-líneas-hex-intentos.PNG)
 
 
 La decodificación de los 57 valores únicos revela:
