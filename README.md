@@ -57,6 +57,14 @@ blue-team-writeups/
 | 119 | [Possible IDOR Attack Detected](letsdefend/soc-alerts/LD-20260326-SOC-169-possible-idor-attack-detected.md) | Medium | True Positive | 26/03/2026 |
 ---
 
+### Hack The Box — Sherlocks
+ 
+| # | Nombre | Categoría | Dificultad | Fecha |
+|---|---|---|---|---|
+| 1 | [Meerkat](htb-blueteam/sherlocks/htb-SOC/HTB-20260330-meerkat.md) | SOC | Easy | 30/03/2026 |
+
+---
+
 ## Disclaimer
 
 Los writeups de LetsDefend son publicados únicamente después de completar el caso y en conformidad con la política de divulgación de la plataforma. Los writeups de HTB son publicados únicamente para retos retirados o con divulgación autorizada.
