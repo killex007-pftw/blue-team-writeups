@@ -55,6 +55,8 @@ blue-team-writeups/
 | 117 | [LS Command Detected in Requested URL](letsdefend/soc-alerts/LD-20260324-SOC-167-ls-command-detected-in-requested-url.md) | High | False Positive | 24/03/2026 |
 | 118 | [Whoami Command Detected in Request Body](letsdefend/soc-alerts/LD-20260325-SOC-168-whoami-command-detected-in-request-body.md) | High | True Positive | 25/03/2026 |
 | 119 | [Possible IDOR Attack Detected](letsdefend/soc-alerts/LD-20260326-SOC-169-possible-idor-attack-detected.md) | Medium | True Positive | 26/03/2026 |
+| 120 | [Passwd Found in Requested URL - Possible LFI Attack](letsdefend/soc-alerts/LD-20260330-SOC-170-passwd-found-in-requested-url-possible-lfi-attack.md) | High | True Positive | 30/03/2026 |
+
 ---
 
 ### Hack The Box — Sherlocks
